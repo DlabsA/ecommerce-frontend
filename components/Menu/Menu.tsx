@@ -87,7 +87,7 @@ export default function Menu() {
               >
                 <div className="flex justify-between items-center p-6 pb-0">
                   <Link href="/">
-                    <link>
+                    <a>
                       <Image
                         className="justify-center"
                         src="/logo.svg"
@@ -95,7 +95,7 @@ export default function Menu() {
                         width={85}
                         height={22}
                       />
-                    </link>
+                    </a>
                   </Link>
                   <button
                     type="button"
@@ -121,52 +121,52 @@ export default function Menu() {
                       />
                     </form>
                     <Link href="/product-category/men">
-                      <link
+                      <a
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
                         {t("men")}
-                      </link>
+                      </a>
                     </Link>
                     <Link href="/product-category/women">
-                      <link
+                      <a
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
                         {t("women")}
-                      </link>
+                      </a>
                     </Link>
                     <Link href="/product-category/bags">
-                      <link
+                      <a
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
                         {t("bags")}
-                      </link>
+                      </a>
                     </Link>
                     <Link href="/blogs">
-                      <link
+                      <a
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
                         {t("blogs")}
-                      </link>
+                      </a>
                     </Link>
                     <Link href="/about">
-                      <link
+                      <a
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
                         {t("about_us")}
-                      </link>
+                      </a>
                     </Link>
                     <Link href="/contact">
-                      <link
+                      <a
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
                         {t("contact_us")}
-                      </link>
+                      </a>
                     </Link>
                     <hr className="border border-gray300 w-full mt-2" />
                     <div className="w-full text-xl py-2 my-3 flex justify-between">
@@ -177,7 +177,7 @@ export default function Menu() {
                     </div>
                     <hr className="border border-gray300 w-full" />
                     <Link href="/wishlist">
-                      <link className="text-xl py-2 my-3 w-full flex justify-between">
+                      <a className="text-xl py-2 my-3 w-full flex justify-between">
                         <span>{t("wishlist")}</span>
                         <div className="relative">
                           <WhistlistIcon />
@@ -189,7 +189,7 @@ export default function Menu() {
                             </span>
                           )}
                         </div>
-                      </link>
+                      </a>
                     </Link>
                     <hr className="border border-gray300 w-full" />
 
@@ -212,7 +212,7 @@ export default function Menu() {
                       >
                         <HMenu.Item>
                           <Link href={asPath} locale="en">
-                            <link
+                            <a
                               className={`${
                                 locale === "en"
                                   ? "bg-gray200 text-gray500"
@@ -220,12 +220,12 @@ export default function Menu() {
                               } py-2 px-4 text-center focus:outline-none`}
                             >
                               {t("english")}
-                            </link>
+                            </a>
                           </Link>
                         </HMenu.Item>
                         <HMenu.Item>
                           <Link href={asPath} locale="my">
-                            <link
+                            <a
                               className={`${
                                 locale === "my"
                                   ? "bg-gray200 text-gray500"
@@ -233,7 +233,7 @@ export default function Menu() {
                               } py-2 px-4 text-center focus:outline-none`}
                             >
                               {t("myanmar")}
-                            </link>
+                            </a>
                           </Link>
                         </HMenu.Item>
                       </HMenu.Items>
@@ -254,7 +254,7 @@ export default function Menu() {
                       >
                         <HMenu.Item>
                           {({ active }) => (
-                            <link
+                            <a
                               href="#"
                               className={`${
                                 active
@@ -263,12 +263,12 @@ export default function Menu() {
                               } py-2 px-4 text-center focus:outline-none`}
                             >
                               {t("usd")}
-                            </link>
+                            </a>
                           )}
                         </HMenu.Item>
                         <HMenu.Item>
                           {({ active }) => (
-                            <link
+                            <a
                               href="#"
                               className={`${
                                 active
@@ -277,27 +277,27 @@ export default function Menu() {
                               } py-2 px-4 text-center focus:outline-none`}
                             >
                               {t("mmk")}
-                            </link>
+                            </a>
                           )}
                         </HMenu.Item>
                       </HMenu.Items>
                     </HMenu>
 
                     <div className="flex my-10 w-2/5 space-x-6 justify-center">
-                      <link
+                      <a
                         href="#"
                         className="text-gray400 w-10 h-10 py-1 px-auto flex justify-center rounded-md active:bg-gray300"
                         aria-label="Haru Fashion Facebook Page"
                       >
                         <FacebookLogo extraClass="h-8" />
-                      </link>
-                      <link
+                      </a>
+                      <a
                         href="#"
                         className="text-gray400 w-10 h-10 py-1 px-auto flex justify-center rounded-md active:bg-gray300"
                         aria-label="Haru Fashion Facebook Page"
                       >
                         <InstagramLogo extraClass="h-8" />
-                      </link>
+                      </a>
                     </div>
                   </div>
                 </div>

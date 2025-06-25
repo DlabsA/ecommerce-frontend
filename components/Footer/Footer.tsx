@@ -17,32 +17,32 @@ export default function Footer() {
           <div>
             <h3 className={styles.footerHead}>{t("company")}</h3>
             <div className={styles.column}>
-              <link href="example">{t("about_us")}</link>
-              <link href="example">{t("contact_us")}</link>
-              <link href="example">{t("store_location")}</link>
-              <link href="example">{t("careers")}</link>
+              <a href="example">{t("about_us")}</a>
+              <a href="example">{t("contact_us")}</a>
+              <a href="example">{t("store_location")}</a>
+              <a href="example">{t("careers")}</a>
             </div>
           </div>
           <div>
             <h3 className={styles.footerHead}>{t("help")}</h3>
             <div className={styles.column}>
-              <link href="example">{t("order_tracking")}</link>
-              <link href="example">{t("faqs")}</link>
-              <link href="example">{t("privacy_policy")}</link>
-              <link href="example">{t("terms_conditions")}</link>
+              <a href="example">{t("order_tracking")}</a>
+              <a href="example">{t("faqs")}</a>
+              <a href="example">{t("privacy_policy")}</a>
+              <a href="example">{t("terms_conditions")}</a>
             </div>
           </div>
           <div>
             <h3 className={styles.footerHead}>{t("store")}</h3>
             <div className={styles.column}>
               <Link href={`/product-category/women`}>
-                <link>{t("women")}</link>
+                <a>{t("women")}</a>
               </Link>
               <Link href={`/product-category/men`}>
-                <link>{t("men")}</link>
+                <a>{t("men")}</a>
               </Link>
               <Link href={`/product-category/bags`}>
-                <link>{t("bags")}</link>
+                <a>{t("bags")}</a>
               </Link>
             </div>
           </div>
@@ -88,18 +88,18 @@ export default function Footer() {
             <span className="hidden sm:block">
               {t("follow_us_on_social_media")}:
             </span>{" "}
-            <link
+            <a
               href="www.facebook.com"
               aria-label="Facebook Page for Haru Fashion"
             >
               <FacebookLogo />
-            </link>
-            <link
+            </a>
+            <a
               href="www.ig.com"
               aria-label="Instagram Account for Haru Fashion"
             >
               <InstagramLogo />
-            </link>
+            </a>
           </span>
         </div>
       </div>

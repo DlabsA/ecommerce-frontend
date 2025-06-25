@@ -67,12 +67,12 @@ const Header: React.FC<Props> = ({ title }) => {
       <AppHeader title={title} />
 
       {/* ===== Skip to main content button ===== */}
-      <link
+      <a
         href="#main-content"
         className="whitespace-nowrap absolute z-50 left-4 opacity-90 rounded-md bg-white px-4 py-3 transform -translate-y-40 focus:translate-y-0 transition-all duration-300"
       >
         {t("skip_to_main_content")}
-      </link>
+      </a>
 
       {/* ===== Top Navigation ===== */}
       <TopNav />
@@ -96,22 +96,22 @@ const Header: React.FC<Props> = ({ title }) => {
             <ul className={`flex-0 lg:flex-1 flex ${styles.leftMenu}`}>
               <li>
                 <Link href={`/product-category/men`}>
-                  <link>{t("men")}</link>
+                  <a>{t("men")}</a>
                 </Link>
               </li>
               <li>
                 <Link href={`/product-category/women`}>
-                  <link>{t("women")}</link>
+                  <a>{t("women")}</a>
                 </Link>
               </li>
               <li>
                 <Link href="/product-category/bags">
-                  <link>{t("bags")}</link>
+                  <a>{t("bags")}</a>
                 </Link>
               </li>
               <li>
                 <Link href="/coming-soon">
-                  <link>{t("blogs")}</link>
+                  <a>{t("blogs")}</a>
                 </Link>
               </li>
             </ul>
@@ -120,7 +120,7 @@ const Header: React.FC<Props> = ({ title }) => {
             <div className="flex-1 flex justify-center items-center cursor-pointer">
               <div className="w-32 h-auto">
                 <Link href="/">
-                  <link>
+                  <a>
                     <Image
                       className="justify-center"
                       src="/logo.svg"
@@ -129,7 +129,7 @@ const Header: React.FC<Props> = ({ title }) => {
                       height={50}
                       layout="responsive"
                     />
-                  </link>
+                  </a>
                 </Link>
               </div>
             </div>
@@ -146,7 +146,7 @@ const Header: React.FC<Props> = ({ title }) => {
               </li>
               <li>
                 <Link href="/wishlist" passHref>
-                  {/* <link className="relative" aria-label="Wishlist"> */}
+                  {/* <a className="relative" aria-label="Wishlist"> */}
                   <button
                     type="button"
                     className="relative"

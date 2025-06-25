@@ -17,8 +17,6 @@ import LinkButton from "../components/Buttons/LinkButton";
 // /bg-img/ourshop.png
 import ourShop from "../public/bg-img/ourshop.png";
 
-let serverurl: string = process.env.NEXT_PUBLIC_PROD_BACKEND_URL || "";
-
 type Props = {
   products: itemType[];
 };
@@ -32,7 +30,7 @@ const Home: React.FC<Props> = ({ products }) => {
     if (!isFetching) return;
     const fetchData = async () => {
       const res = await axios.get(
-        `${serverurl}/api/v1/products?order_by=createdAt.desc&offset=${currentItems.length}&limit=10`
+        `${process.env.NEXT_PUBLIC_PROD_BACKEND_URL}/api/v1/products?order_by=createdAt.desc&offset=${currentItems.length}&limit=10`
       );
       const fetchedProducts = res.data.data.map((product: apiProductsType) => ({
         ...product,
@@ -169,10 +167,6 @@ const Home: React.FC<Props> = ({ products }) => {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   let products: itemType[] = [];
-  let serverurl: string =
-    process.env.NEXT_PUBLIC_PROD_BACKEND_URL ||
-    process.env.NEXT_PUBLIC_BACKEND_URL ||
-    "";
   const res = await axios.get(
     `http://localhost:8000/api/v1/products?order_by=createdAt.desc&limit=10`
   );
