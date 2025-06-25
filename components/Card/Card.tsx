@@ -35,32 +35,32 @@ const Card: FC<Props> = ({ item }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <Link href={itemLink}>
-          <a
-            tabIndex={-1}
-            onMouseOver={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {!isHovered && (
-              <Image
-                src={img1 as string}
-                alt={name}
-                width={230}
-                height={300}
-                layout="responsive"
-              />
-            )}
-            {isHovered && (
-              <Image
-                className="transition-transform transform hover:scale-110 duration-1000"
-                src={img2 as string}
-                alt={name}
-                width={230}
-                height={300}
-                layout="responsive"
-              />
-            )}
-          </a>
+        <Link
+          href={itemLink}
+          tabIndex={-1}
+          onMouseOver={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}>
+
+          {!isHovered && (
+            <Image
+              src={img1 as string}
+              alt={name}
+              width={230}
+              height={300}
+              layout="responsive"
+            />
+          )}
+          {isHovered && (
+            <Image
+              className="transition-transform transform hover:scale-110 duration-1000"
+              src={img2 as string}
+              alt={name}
+              width={230}
+              height={300}
+              layout="responsive"
+            />
+          )}
+
         </Link>
         <button
           type="button"
@@ -80,10 +80,9 @@ const Card: FC<Props> = ({ item }) => {
           {t("add_to_cart")}
         </button>
       </div>
-
       <div className="content">
-        <Link href={itemLink}>
-          <a className={styles.itemName}>{name}</a>
+        <Link href={itemLink} className={styles.itemName}>
+          {name}
         </Link>
         <div className="text-gray400">$ {price}</div>
         <button

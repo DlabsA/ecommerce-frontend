@@ -71,20 +71,21 @@ const Product: React.FC<Props> = ({ product, products }) => {
     <div>
       {/* ===== Head Section ===== */}
       <Header title={`${product.name} - Haru Fashion`} />
-
       <main id="main-content">
         {/* ===== Breadcrumb Section ===== */}
         <div className="bg-lightgreen h-16 w-full flex items-center border-t-2 border-gray200">
           <div className="app-x-padding app-max-width w-full">
             <div className="breadcrumb">
-              <Link href="/">
-                <a className="text-gray400">{t("home")}</a>
+              <Link href="/" className="text-gray400">
+                {t("home")}
               </Link>{" "}
               /{" "}
-              <Link href={`/product-category/${product.categoryName}`}>
-                <a className="text-gray400 capitalize">
-                  {t(product.categoryName as string)}
-                </a>
+              <Link
+                href={`/product-category/${product.categoryName}`}
+                className="text-gray400 capitalize">
+
+                {t(product.categoryName as string)}
+
               </Link>{" "}
               / <span>{product.name}</span>
             </div>
@@ -298,7 +299,6 @@ const Product: React.FC<Props> = ({ product, products }) => {
           </div>
         </div>
       </main>
-
       {/* ===== Footer Section ===== */}
       <Footer />
     </div>

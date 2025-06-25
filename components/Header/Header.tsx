@@ -65,7 +65,6 @@ const Header: React.FC<Props> = ({ title }) => {
     <>
       {/* ===== <head> section ===== */}
       <AppHeader title={title} />
-
       {/* ===== Skip to main content button ===== */}
       <a
         href="#main-content"
@@ -73,10 +72,8 @@ const Header: React.FC<Props> = ({ title }) => {
       >
         {t("skip_to_main_content")}
       </a>
-
       {/* ===== Top Navigation ===== */}
       <TopNav />
-
       {/* ===== Main Navigation ===== */}
       <nav
         className={`${
@@ -96,22 +93,22 @@ const Header: React.FC<Props> = ({ title }) => {
             <ul className={`flex-0 lg:flex-1 flex ${styles.leftMenu}`}>
               <li>
                 <Link href={`/product-category/men`}>
-                  <a>{t("men")}</a>
+                  {t("men")}
                 </Link>
               </li>
               <li>
                 <Link href={`/product-category/women`}>
-                  <a>{t("women")}</a>
+                  {t("women")}
                 </Link>
               </li>
               <li>
                 <Link href="/product-category/bags">
-                  <a>{t("bags")}</a>
+                  {t("bags")}
                 </Link>
               </li>
               <li>
                 <Link href="/coming-soon">
-                  <a>{t("blogs")}</a>
+                  {t("blogs")}
                 </Link>
               </li>
             </ul>
@@ -120,16 +117,16 @@ const Header: React.FC<Props> = ({ title }) => {
             <div className="flex-1 flex justify-center items-center cursor-pointer">
               <div className="w-32 h-auto">
                 <Link href="/">
-                  <a>
-                    <Image
-                      className="justify-center"
-                      src="/logo.svg"
-                      alt="Picture of the author"
-                      width={220}
-                      height={50}
-                      layout="responsive"
-                    />
-                  </a>
+
+                  <Image
+                    className="justify-center"
+                    src="/logo.svg"
+                    alt="Picture of the author"
+                    width={220}
+                    height={50}
+                    layout="responsive"
+                  />
+
                 </Link>
               </div>
             </div>
@@ -145,7 +142,7 @@ const Header: React.FC<Props> = ({ title }) => {
                 </AuthForm>
               </li>
               <li>
-                <Link href="/wishlist" passHref>
+                <Link href="/wishlist" passHref legacyBehavior>
                   {/* <a className="relative" aria-label="Wishlist"> */}
                   <button
                     type="button"
