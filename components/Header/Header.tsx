@@ -92,24 +92,16 @@ const Header: React.FC<Props> = ({ title }) => {
             {/* Left Nav */}
             <ul className={`flex-0 lg:flex-1 flex ${styles.leftMenu}`}>
               <li>
-                <Link href={`/product-category/men`}>
-                  {t("men")}
-                </Link>
+                <Link href={`/product-category/men`}>{t("men")}</Link>
               </li>
               <li>
-                <Link href={`/product-category/women`}>
-                  {t("women")}
-                </Link>
+                <Link href={`/product-category/women`}>{t("women")}</Link>
               </li>
               <li>
-                <Link href="/product-category/bags">
-                  {t("bags")}
-                </Link>
+                <Link href="/product-category/bags">{t("bags")}</Link>
               </li>
               <li>
-                <Link href="/coming-soon">
-                  {t("blogs")}
-                </Link>
+                <Link href="/404">{t("blogs")}</Link>
               </li>
             </ul>
 
@@ -117,7 +109,6 @@ const Header: React.FC<Props> = ({ title }) => {
             <div className="flex-1 flex justify-center items-center cursor-pointer">
               <div className="w-32 h-auto">
                 <Link href="/">
-
                   <Image
                     className="justify-center"
                     src="/logo.svg"
@@ -126,7 +117,6 @@ const Header: React.FC<Props> = ({ title }) => {
                     height={50}
                     layout="responsive"
                   />
-
                 </Link>
               </div>
             </div>
@@ -162,7 +152,7 @@ const Header: React.FC<Props> = ({ title }) => {
                 </Link>
               </li>
               <li>
-                <CartItem />
+                  <CartItem />
               </li>
             </ul>
           </div>
