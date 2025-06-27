@@ -12,10 +12,10 @@ import "animate.css";
 import "nprogress/nprogress.css";
 
 // Import Swiper styles
-import "swiper/swiper.min.css";
-import "swiper/components/navigation/navigation.min.css";
-import "swiper/components/pagination/pagination.min.css";
-import "swiper/components/scrollbar/scrollbar.min.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
