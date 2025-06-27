@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@headlessui/react": "^1.0.0",
+    "@headlessui/react": "^1.7.19",
     "animate.css": "^4.1.1",
     "axios": "^1.10.0",
     "caniuse-lite": "^1.0.30001726",
