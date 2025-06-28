@@ -92,13 +92,13 @@ const Header: React.FC<Props> = ({ title }) => {
             {/* Left Nav */}
             <ul className={`flex-0 lg:flex-1 flex ${styles.leftMenu}`}>
               <li>
-                <Link href={`/product-category/men`}>{t("men")}</Link>
+                <Link href={`/product-category/men`}>{t("makeup")}</Link>
               </li>
               <li>
-                <Link href={`/product-category/women`}>{t("women")}</Link>
+                <Link href={`/product-category/women`}>{t("beautyProducts")}</Link>
               </li>
               <li>
-                <Link href="/product-category/bags">{t("bags")}</Link>
+                <Link href="/product-category/bags">{t("skincare")}</Link>
               </li>
               <li>
                 <Link href="/404">{t("blogs")}</Link>

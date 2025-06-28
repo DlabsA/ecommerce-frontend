@@ -9,12 +9,12 @@ type Props = {
 
 // "Discover affordable and fashionable men's and women's clothing online at Haru Fashion. Free Returns ✓ 1000+ New Arrivals Dropped Daily."
 const defaultDesc =
-  "Haru Fashion e-commerce developed with Next.JS. Coded with 🖤 by Sat Naing (satnaing.dev).";
+  "At Amore Faces, we believe beauty is more than just a look — it’s a feeling. Whether you're stepping out for a big event or treating yourself to daily self-care, our goal is to help you shine with confidence.";
 const defaultKeywords =
-  "Haru Fashion, Online Shop, E-commerce, Sat Naing, NextJS";
+  "Professional Makeup Uganda, Bridal Makeup Kampala, Glam Makeup Artist, Makeup Services Uganda, Natural Look Makeup, Kukyala & Kwanjula Makeup, Skincare Products Uganda, Beauty Products Kampala, Wig Installation Services";
 
 const AppHeader: React.FC<Props> = ({
-  title = "Haru Fashion",
+  title = "Amore Faces",
   desc = defaultDesc,
   keywords = defaultKeywords,
 }) => {
