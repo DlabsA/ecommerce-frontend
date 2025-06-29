@@ -15,7 +15,8 @@ import { apiProductsType, itemType } from "../context/cart/cart-types";
 import LinkButton from "../components/Buttons/LinkButton";
 
 // /bg-img/ourshop.png
-import ourShop from "../public/bg-img/ourshop.png";
+import ourShop from "../public/bg-img/ourshop.jpg";
+import ContactInformation from "../components/ContactUsSection/ContactInformation";
 
 type Props = {
   products: itemType[];
@@ -149,13 +150,112 @@ const Home: React.FC<Props> = ({ products }) => {
         <div className="border-gray100 border-b-2"></div>
 
         {/* ===== Our Shop Section */}
-        <section className="app-max-width mt-16 mb-20 flex flex-col justify-center items-center text-center">
-          <div className="textBox w-3/4 md:w-2/4 lg:w-2/5 mb-6">
-            <h2 className="text-3xl mb-6">{t("our_shop")}</h2>
-            <span className="w-full">{t("our_shop_desc")}</span>
+
+        <section className="app-max-width mt-16 mb-20 flex flex-col lg:flex-row items-center">
+          <div className="w-full lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
+            <div className="text-left">
+              <h2 className="text-4xl lg:text-5xl font-light leading-tight mb-6 text-gray-800">
+                EXPLORE
+                <br />
+                TIMELESS
+                <br />
+                <span className="font-medium">ELEGANCE.</span>
+                <br />
+                EXPRESS YOURSELF.
+              </h2>
+            </div>
           </div>
-          <div className="w-full app-x-padding flex justify-center">
-            <Image src={ourShop} alt="Our Shop" />
+          <div className="w-full lg:w-1/2">
+            <div className="relative h-96 lg:h-[500px] overflow-hidden rounded-lg">
+              <Image
+                src={ourShop}
+                alt="Confident people celebrating"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ======== Contact Us Section ======== */}
+        <section className="app-max-width app-x-padding my-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <ContactInformation />
+
+            {/* Email Form */}
+            <div>
+              <h2 className="text-3xl font-semibold mb-6">Send us a Message</h2>
+              <form className="space-y-4">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  ></textarea>
+                </div>
+                <Button
+                  value="Send Message"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    // Handle form submission
+                  }}
+                />
+              </form>
+            </div>
           </div>
         </section>
       </main>

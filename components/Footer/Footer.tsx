@@ -46,22 +46,6 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div>
-            <h3 className={styles.footerHead}>{t("keep_in_touch")}</h3>
-            <div className={styles.column}>
-              <span>
-                {t("address.detail")}
-                <br />
-                {t("address.road")}
-                <br />
-                {t("address.city")}
-              </span>
-              <span>{t("phone_number")}</span>
-              <span>
-                {t("open_all_days")} <br />- {t("opening_hours")}
-              </span>
-            </div>
-          </div>
         </div>
       </div>
       <div className="flex flex-col items-center pb-16">

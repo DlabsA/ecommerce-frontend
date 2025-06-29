@@ -22,6 +22,7 @@
     "keep_in_touch": "Keep In Touch",
     "about_us": "About Us",
     "contact_us": "Contact Us",
+    "address_title": "Address",
     "our_policy": "Our Policy",
     "store_location": "Store Location",
     "order_tracking": "Order Tracking",
@@ -31,11 +32,25 @@
     "search_anything": "Search anything ...",
     "address_full": "No(7), Ground Floor, Malikha Building, Yadanar Road, Thingangyun, Yangon",
     "address": {
-      "detail": "No(7), Ground Floor,",
-      "road": "Malikha Building, Yadanar Road,",
-      "city": "Thingangyun, Yangon"
+      "title": "Address",
+      "street": "Nsamizi Road, Nsamizi",
+      "district": "Entebbe",
+      "country": "Uganda"
     },
-    "phone_number": "+95 95 096 051",
+    "phone":{
+      "title": "Phone",
+      "number1": "+256 741 189136",
+      "number2": "+256 789 404730"
+    },
+    "email": {
+      "title": "Email",
+      "address": "bridgetgesa750@gmail.com"},
+    "business_hours": {
+      "title": "Business Hours",
+      "monday_to_friday": "Monday to Friday: 9:00 AM ~ 5:00 PM",
+      "saturday": "Saturday: 10:00 AM ~ 4:00 PM",
+      "sunday": "Sunday: Closed"
+    },
     "open_all_days": "Open All Days",
     "opening_hours": "9:00 AM ~ 11:00 PM",
     "newsletter": "Newsletter",
