@@ -37,7 +37,7 @@ export default function Document() {
         />
         <link href="/favicons/favicon.ico" rel="shortcut icon" />
         <link href="/favicons/site.webmanifest" rel="manifest" />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:url" content="https://haru-fashion.vercel.app" />
         <link rel="canonical" href="https://haru-fashion.vercel.app" />
         <meta property="og:site_name" content="Haru Fashion" />
