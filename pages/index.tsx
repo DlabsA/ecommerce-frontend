@@ -122,10 +122,11 @@ const Home: React.FC<Props> = ({ products }) => {
         </section>
 
         {/* ===== Testimonial Section ===== */}
-        <section className="w-full hidden h-full py-16 md:flex flex-col items-center bg-lightgreen">
+
+        {/* <section className="w-full hidden h-full py-16 md:flex flex-col items-center bg-lightgreen">
           <h2 className="text-3xl">{t("testimonial")}</h2>
           <TestiSlider />
-        </section>
+        </section> */}
 
         {/* ===== Featured Products Section ===== */}
         <section className="app-max-width app-x-padding my-16 flex flex-col">
