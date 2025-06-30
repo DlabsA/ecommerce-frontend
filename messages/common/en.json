@@ -51,8 +51,16 @@
       "saturday": "Saturday: 10:00 AM ~ 4:00 PM",
       "sunday": "Sunday: Closed"
     },
-    "open_all_days": "Open All Days",
-    "opening_hours": "9:00 AM ~ 11:00 PM",
+    "send_message": {
+      "title": "Send us a Message",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send_message": "Send Message",
+      "message_sent": "Message sent successfully!",
+      "error_sending_message": "Error sending message. Please try again later."
+    },
     "newsletter": "Newsletter",
     "newsletter_desc": "Be the first to know about new arrivals, sales & promos!",
     "all_rights_reserved": "All rights reserved.",
