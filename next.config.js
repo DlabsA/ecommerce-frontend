@@ -17,7 +17,7 @@ module.exports = withPWA({
   pwa: {
     dest: "public",
     skipWaiting: true,
-    disable: process.env.NODE_ENV === "development",
+    disable: process.env.NODE_ENV === "production",
   },
   // };
 });
