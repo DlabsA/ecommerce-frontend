@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Disclosure } from "@headlessui/react";
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { useTranslations } from "next-intl";
 import axios from "axios";
 
@@ -20,14 +20,11 @@ import Card from "../../components/Card/Card";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import Swiper core and required modules
-import SwiperCore, { Pagination } from "swiper/core";
+import { Pagination } from "swiper/modules";
 import { apiProductsType, itemType } from "../../context/cart/cart-types";
 import { useWishlist } from "../../context/wishlist/WishlistProvider";
 import { useCart } from "../../context/cart/CartProvider";
 import HeartSolid from "../../public/icons/HeartSolid";
-
-// install Swiper modules
-SwiperCore.use([Pagination]);
 
 type Props = {
   product: itemType;
@@ -122,6 +119,7 @@ const Product: React.FC<Props> = ({ product, products }) => {
             </div>
             <div className="w-full sm:w-3/4 h-full m-0 sm:m-4">
               <Swiper
+                modules={[Pagination]}
                 slidesPerView={1}
                 spaceBetween={0}
                 loop={true}
@@ -243,19 +241,19 @@ const Product: React.FC<Props> = ({ product, products }) => {
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="py-2 focus:outline-none text-left mb-4 border-b-2 border-gray200 flex items-center justify-between">
+                  <DisclosureButton className="py-2 focus:outline-none text-left mb-4 border-b-2 border-gray200 flex items-center justify-between">
                     <span>{t("details")}</span>
                     <DownArrow
                       extraClass={`${
                         open ? "" : "transform rotate-180"
                       } w-5 h-5 text-purple-500`}
                     />
-                  </Disclosure.Button>
-                  <Disclosure.Panel
+                  </DisclosureButton>
+                  <DisclosurePanel
                     className={`text-gray400 animate__animated animate__bounceIn`}
                   >
                     {product.detail}
-                  </Disclosure.Panel>
+                  </DisclosurePanel>
                 </>
               )}
             </Disclosure>
@@ -273,6 +271,7 @@ const Product: React.FC<Props> = ({ product, products }) => {
         <div className="recSection my-8 app-max-width app-x-padding">
           <h2 className="text-3xl mb-6">{t("you_may_also_like")}</h2>
           <Swiper
+            modules={[Pagination]}
             slidesPerView={2}
             // centeredSlides={true}
             spaceBetween={10}

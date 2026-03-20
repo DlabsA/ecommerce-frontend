@@ -35,13 +35,13 @@ export default function Footer() {
           <div>
             <h3 className={styles.footerHead}>{t("store")}</h3>
             <div className={styles.column}>
-              <Link href={`/product-category/women`}>
+              <Link href={`/product-category/beautyProducts`}>
                 {t("beautyProducts")}
               </Link>
-              <Link href={`/product-category/men`}>
+              <Link href={`/product-category/makeup`}>
                 {t("makeup")}
               </Link>
-              <Link href={`/product-category/bags`}>
+              <Link href={`/product-category/skincare`}>
                 {t("skincare")}
               </Link>
             </div>
@@ -67,7 +67,7 @@ export default function Footer() {
       </div>
       <div className={styles.bottomFooter}>
         <div className="app-max-width app-x-padding w-full flex justify-between">
-          <span className="">@2022 Haru. {t("all_rights_reserved")}</span>
+          <span className="">@2025 Dlabs. {t("all_rights_reserved")}</span>
           <span className="flex items-center">
             <span className="hidden sm:block">
               {t("follow_us_on_social_media")}:

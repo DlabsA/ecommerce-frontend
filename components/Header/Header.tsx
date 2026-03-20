@@ -92,13 +92,13 @@ const Header: React.FC<Props> = ({ title }) => {
             {/* Left Nav */}
             <ul className={`flex-0 lg:flex-1 flex ${styles.leftMenu}`}>
               <li>
-                <Link href={`/product-category/men`}>{t("makeup")}</Link>
+                <Link href={`/product-category/makeup`}>{t("makeup")}</Link>
               </li>
               <li>
-                <Link href={`/product-category/women`}>{t("beautyProducts")}</Link>
+                <Link href={`/product-category/beautyProducts`}>{t("beautyProducts")}</Link>
               </li>
               <li>
-                <Link href="/product-category/bags">{t("skincare")}</Link>
+                <Link href="/product-category/skincare">{t("skincare")}</Link>
               </li>
               <li>
                 <Link href="/404">{t("blogs")}</Link>
@@ -132,13 +132,7 @@ const Header: React.FC<Props> = ({ title }) => {
                 </AuthForm>
               </li>
               <li>
-                <Link href="/wishlist" passHref legacyBehavior>
-                  {/* <a className="relative" aria-label="Wishlist"> */}
-                  <button
-                    type="button"
-                    className="relative"
-                    aria-label="Wishlist"
-                  >
+                <Link href="/wishlist" className="relative" aria-label="Wishlist">
                     <WhistlistIcon />
                     {noOfWishlist > 0 && (
                       <span
@@ -147,8 +141,6 @@ const Header: React.FC<Props> = ({ title }) => {
                         {noOfWishlist}
                       </span>
                     )}
-                  </button>
-                  {/* </a> */}
                 </Link>
               </li>
               <li>

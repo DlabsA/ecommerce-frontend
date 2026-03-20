@@ -30,18 +30,29 @@ const Home: React.FC<Props> = ({ products }) => {
 
   useEffect(() => {
     if (!isFetching) return;
+    const backendUrl =
+      process.env.NEXT_PUBLIC_BACKEND_URL ||
+      process.env.NEXT_PUBLIC_PROD_BACKEND_URL ||
+      "http://localhost:8000";
+
     const fetchData = async () => {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_PROD_BACKEND_URL}/api/v1/products?order_by=createdAt.desc&offset=${currentItems.length}&limit=10`
-      );
-      const fetchedProducts = res.data.data.map((product: apiProductsType) => ({
-        ...product,
-        img1: product.image1,
-        img2: product.image2,
-      }));
-      setCurrentItems((products) => [...products, ...fetchedProducts]);
-      setIsFetching(false);
+      try {
+        const res = await axios.get(
+          `${backendUrl}/api/v1/products?order_by=createdAt.desc&offset=${currentItems.length}&limit=10`
+        );
+        const fetchedProducts = res.data.data.map((product: apiProductsType) => ({
+          ...product,
+          img1: product.image1,
+          img2: product.image2,
+        }));
+        setCurrentItems((products) => [...products, ...fetchedProducts]);
+      } catch {
+        // Keep existing items if the backend is temporarily unavailable.
+      } finally {
+        setIsFetching(false);
+      }
     };
+
     fetchData();
   }, [isFetching, currentItems.length]);
 
@@ -84,10 +95,10 @@ const Home: React.FC<Props> = ({ products }) => {
                 imgAlt="Women Collection"
               >
                 <LinkButton
-                  href="/product-category/women"
+                  href="/product-category/beautyProducts"
                   extraClass="absolute bottom-10-per z-20"
                 >
-                  {t("women_collection")}
+                  {t("makeup_collection")}
                 </LinkButton>
               </OverlayContainer>
             </div>
@@ -97,10 +108,10 @@ const Home: React.FC<Props> = ({ products }) => {
                 imgAlt="Men Collection"
               >
                 <LinkButton
-                  href="/product-category/men"
+                  href="/product-category/makeup"
                   extraClass="absolute bottom-10-per z-20"
                 >
-                  {t("men_collection")}
+                  {t("skincare_collection")}
                 </LinkButton>
               </OverlayContainer>
             </div>
@@ -116,10 +127,9 @@ const Home: React.FC<Props> = ({ products }) => {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 lg:gap-x-12 gap-y-6 mb-10 app-x-padding">
-            <Card key={currentItems[1].id} item={currentItems[1]} />
-            <Card key={currentItems[2].id} item={currentItems[2]} />
-            <Card key={currentItems[3].id} item={currentItems[3]} />
-            <Card key={currentItems[4].id} item={currentItems[4]} />
+            {currentItems.slice(0, 4).map((item) => (
+              <Card key={item.id} item={item} />
+            ))}
           </div>
         </section>
 
@@ -199,22 +209,32 @@ const Home: React.FC<Props> = ({ products }) => {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   let products: itemType[] = [];
-  const res = await axios.get(
-    `http://localhost:8000/api/v1/products?order_by=createdAt.desc&limit=10`
-  );
-  const fetchedProducts = res.data;
-  fetchedProducts.data.forEach((product: apiProductsType) => {
-    products = [
-      ...products,
-      {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        img1: product.image1,
-        img2: product.image2,
-      },
-    ];
-  });
+  const backendUrl =
+    process.env.NEXT_PUBLIC_BACKEND_URL ||
+    process.env.NEXT_PUBLIC_PROD_BACKEND_URL ||
+    "http://localhost:8000";
+
+  try {
+    const res = await axios.get(
+      `${backendUrl}/api/v1/products?order_by=createdAt.desc&limit=10`
+    );
+    const fetchedProducts = res.data;
+    fetchedProducts.data.forEach((product: apiProductsType) => {
+      products = [
+        ...products,
+        {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          img1: product.image1,
+          img2: product.image2,
+        },
+      ];
+    });
+  } catch {
+    products = [];
+  }
+
   return {
     props: {
       messages: {

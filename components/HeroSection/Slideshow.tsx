@@ -15,15 +15,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import Swiper core and required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
-const sliders = [
+const Slideshow = () => {
+  const t = useTranslations("Index");
+  const sliders = [
   {
     id: 2,
     image: "/bg-img/slide-web-1.jpg",
     imageTablet: "/bg-img/slide-tablet-1.jpg",
     imageMobile: "/bg-img/slide-mobile-1.jpg",
-    subtitle: "Beauty Collection",
-    titleUp: "New Makeup",
-    titleDown: "Promotions",
+    subtitle: t("makeup_collection"),
+    titleUp: t("new_makeup"),
+    titleDown: t("promotions"),
     rightText: false,
   },
   {
@@ -31,9 +33,9 @@ const sliders = [
     image: "/bg-img/slide-web-2.jpg",
     imageTablet: "/bg-img/slide-tablet-2.jpg",
     imageMobile: "/bg-img/slide-mobile-2.jpg",
-    subtitle: "Skincare Collection",
-    titleUp: "Are You Ready?",
-    titleDown: "For Amore",
+    subtitle: t("skincare_collection"),
+    titleUp: t("are_you_ready"),
+    titleDown: t("for_amore"),
     rightText: true,
   },
   {
@@ -41,15 +43,12 @@ const sliders = [
     image: "/bg-img/slide-web-3.jpg",
     imageTablet: "/bg-img/slide-tablet-3.jpg",
     imageMobile: "/bg-img/slide-mobile-3.jpg",
-    subtitle: "Makeup Collection",
+    subtitle: t("makeup_collection"),
     titleUp: "Are you outing?",
     titleDown: "We got you",
     rightText: false,
   },
 ];
-
-const Slideshow = () => {
-  const t = useTranslations("Index");
 
   return (
     <>

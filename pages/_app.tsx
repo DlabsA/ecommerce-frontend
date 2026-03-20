@@ -1,7 +1,8 @@
 import { NextComponentType, NextPageContext } from "next";
 import Router from "next/router";
+import { useRouter } from "next/router";
 import NProgress from "nprogress";
-import { NextIntlProvider } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
 
 import { ProvideCart } from "../context/cart/CartProvider";
 import { ProvideWishlist } from "../context/wishlist/WishlistProvider";
@@ -29,8 +30,14 @@ type AppCustomProps = {
 };
 
 const MyApp = ({ Component, pageProps }: AppCustomProps) => {
+  const router = useRouter();
+
   return (
-    <NextIntlProvider messages={pageProps?.messages}>
+    <NextIntlClientProvider
+      locale={router.locale || "en"}
+      timeZone="UTC"
+      messages={pageProps?.messages || {}}
+    >
       <ProvideAuth>
         <ProvideWishlist>
           <ProvideCart>
@@ -38,7 +45,7 @@ const MyApp = ({ Component, pageProps }: AppCustomProps) => {
           </ProvideCart>
         </ProvideWishlist>
       </ProvideAuth>
-    </NextIntlProvider>
+    </NextIntlClientProvider>
   );
 };
 

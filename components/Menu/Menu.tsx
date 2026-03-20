@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import { Menu as HMenu } from "@headlessui/react";
 import Link from "next/link";
 import Image from "next/image";
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, DialogBackdrop, Transition } from "@headlessui/react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/router";
 
@@ -70,7 +70,7 @@ export default function Menu() {
         >
           <div className="min-h-screen">
             <Transition.Child as={Fragment}>
-              <Dialog.Overlay className="fixed inset-0 bg-gray500 opacity-50" />
+              <DialogBackdrop className="fixed inset-0 bg-gray500 opacity-50" />
             </Transition.Child>
             <Transition.Child
               as={Fragment}
@@ -119,21 +119,21 @@ export default function Menu() {
                       />
                     </form>
                     <Link
-                      href="/product-category/men"
+                      href="/product-category/makeup"
                       className="w-full text-xl hover:bg-gray100 text-left py-2"
                       onClick={closeModal}
                     >
                       {t("makeup")}
                     </Link>
                     <Link
-                      href="/product-category/women"
+                      href="/product-category/beautyProducts"
                       className="w-full text-xl hover:bg-gray100 text-left py-2"
                       onClick={closeModal}
                     >
                       {t("beautyProducts")}
                     </Link>
                     <Link
-                      href="/product-category/bags"
+                      href="/product-category/skincare"
                       className="w-full text-xl hover:bg-gray100 text-left py-2"
                       onClick={closeModal}
                     >
